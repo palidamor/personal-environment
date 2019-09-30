@@ -27,11 +27,16 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 " Awesome NerdTree
 Plugin 'scrooloose/nerdtree'
+" NerdTree Git Support
+Plugin 'xuyuanp/nerdtree-git-plugin'
 " Super Search in VIM use ctrl + p to enable search
-Plugin 'kien/ctrlp.vim'
-
+Plugin 'ctrlpvim/ctrlp.vim'
+" NerdTree DevIcon Support
+Plugin 'ryanoasis/vim-devicons'
 " Set NerdTree to start when vim starts
 autocmd vimenter * NERDTree
+" Set NerdTree to close if its is left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Ignore .pyc in NerdTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
